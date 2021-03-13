@@ -1,21 +1,21 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
-int main(){
-    int n,a,b,c;
-    cin>>n>>a>>b>>c;
-    int x,y,z,p=0,i;
-    i=min(a,min(b,c));
-    i=n/i;
-    for(x=i;x>=0;x--){
-        for(y=0;y<=i;y++){
-            z=abs((n-(a*x+b*y))/c);
-            if((a*x+b*y+c*z)==n){
-               p=max(p,x+y+z);
-            }
-        }
-    }
-    cout<<p<<endl;
-    return 0;
+int main() {
+ int a,b,c,n;
+ cin>>n>>a>>b>>c;
+ int dp[n+1];
+ dp[0]=0;
+ for(int i=0;i<=n;i++)
+ {
+     int x=-1,y=-1,z=-1;
+     if(i>=a)
+        x=dp[i-a];
+     if(i>=b)
+        y=dp[i-b];
+     if(i>=c)
+        z=dp[i-c];
+     dp[i]=max(x,max(y,z)) +1;
+ }
+ cout<<dp[n];
 }

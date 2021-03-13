@@ -17,5 +17,5 @@ int main() {
         z=dp[i-c];
      dp[i]=max(x,max(y,z)) +1;
  }
- cout<<dp[n];
+ cout<<dp[n]<<endl;
 }

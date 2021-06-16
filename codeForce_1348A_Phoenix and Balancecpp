@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+#include <string>
+#include <string.h>
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <utility>
+#include <cstdlib>
+
+using namespace std;
+
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++)
+    {
+        int n;
+        cin>>n;
+        long long int a=0,b=0;
+        int p=1;
+        a=pow(2,n);
+        b=pow(2,n-1);
+
+        for(int j=1;j<n/2;j++)
+        {
+            a+=pow(2,j);
+           // cout<<a<<endl;
+            b+=pow(2,n-j-1);
+            //cout<<b<<endl;
+
+        }
+        cout<<abs(a-b)<<endl;
+
+
+    }
+}
+
